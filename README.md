@@ -1,5 +1,14 @@
 # 函数式编程练习：Stream
 
+我在这些类中给你准备了很多Stream的练习题，绝对让你过一把瘾！
+
+- [`Problem1`](https://github.com/hcsp/stream-in-action/blob/master/src/main/com/github/hcsp/stream/Problem1.java)
+- [`Problem2`](https://github.com/hcsp/stream-in-action/blob/master/src/main/com/github/hcsp/stream/Problem2.java)
+- [`Problem3`](https://github.com/hcsp/stream-in-action/blob/master/src/main/com/github/hcsp/stream/Problem3.java)
+- [`Problem4`](https://github.com/hcsp/stream-in-action/blob/master/src/main/com/github/hcsp/stream/Problem4.java)
+- [`Problem5`](https://github.com/hcsp/stream-in-action/blob/master/src/main/com/github/hcsp/stream/Problem5.java)
+- [`Problem6`](https://github.com/hcsp/stream-in-action/blob/master/src/main/com/github/hcsp/stream/Problem6.java)
+
 我在[`Problems`](https://github.com/hcsp/stream-in-action/blob/master/src/main/java/com/github/hcsp/stream/)里面给你准备了很多`Stream`的练习题，祝你好运！
 
 -----
