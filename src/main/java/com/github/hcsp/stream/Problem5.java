@@ -13,11 +13,7 @@ public class Problem5 {
     }
 
     public static void main(String[] args) {
-        System.out.println(
-                    toMap(
-                        Arrays.asList(
-                                new Order(1, "肥皂"),
-                                new Order(2, "牙刷"))));
+        System.out.println(toMap(Arrays.asList(new Order(1, "肥皂"), new Order(2, "牙刷"))));
     }
 
     static class Order {
