@@ -1,6 +1,7 @@
 package com.github.hcsp.stream;
 
 import java.util.Arrays;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class Problem6 {
@@ -12,6 +13,6 @@ public class Problem6 {
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.asList("a", "bb", "ccc", "d", "d"));
+        System.out.println(filterThenConcat(new LinkedHashSet<>(Arrays.asList("a", "bb", "ccc", "d", "e"))));
     }
 }
