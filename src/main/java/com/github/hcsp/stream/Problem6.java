@@ -13,6 +13,7 @@ public class Problem6 {
     }
 
     public static void main(String[] args) {
-        System.out.println(filterThenConcat(new LinkedHashSet<>(Arrays.asList("a", "bb", "ccc", "d", "e"))));
+        Set<String> set = new LinkedHashSet<>(Arrays.asList("a", "bb", "ccc", "d", "e"));
+        System.out.println(filterThenConcat(set));
     }
 }
