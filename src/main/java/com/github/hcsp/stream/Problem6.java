@@ -1,7 +1,7 @@
 package com.github.hcsp.stream;
 
 import java.util.Arrays;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -14,6 +14,7 @@ public class Problem6 {
     }
 
     public static void main(String[] args) {
-        System.out.println(filterThenConcat(new HashSet<>(Arrays.asList("a", "bb", "ccc", "d", "e"))));
+        Set<String> set = new LinkedHashSet<>(Arrays.asList("a", "bb", "ccc", "d", "e"));
+        System.out.println(filterThenConcat(set));
     }
 }
