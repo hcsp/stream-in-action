@@ -60,7 +60,7 @@ public class ProblemsTest {
                                 new Problem4.Employee(4, "王五", 50, "市场部")));
 
         Assertions.assertEquals(
-                Arrays.asList(1, 2),
+                Arrays.asList(2, 1),
                 map.get("技术部").stream().map(Problem4.Employee::getId).collect(Collectors.toList()));
         Assertions.assertEquals(
                 Arrays.asList(3, 4),
