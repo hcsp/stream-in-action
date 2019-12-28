@@ -1,11 +1,14 @@
 package com.github.hcsp.stream;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class Problem4 {
+
     // 再用流的方法把之前的题目做一遍吧：
     // 请编写一个方法，对传入的List<Employee>进行如下处理：
     // 返回一个从部门名到这个部门的所有用户的映射。同一个部门的用户按照年龄进行从小到大排序。
@@ -15,19 +18,24 @@ public class Problem4 {
     //    技术部 -> [{name=李四, department=技术部, age=30 }, {name=张三, department=技术部, age=40 }]
     //    市场部 -> [{name=王五, department=市场部, age=40 }]
     public static Map<String, List<Employee>> collect(List<Employee> employees) {
-        return null;
+        // 这算不算一种取巧,老师有其他方法嘛?
+        Map<String, List<Employee>> collect = employees.stream().sorted(Comparator.comparing(Employee::getAge))
+            .collect(Collectors.groupingBy(Employee::getDepartment));
+
+        return collect;
     }
 
     public static void main(String[] args) {
         System.out.println(
-                collect(
-                        Arrays.asList(
-                                new Employee(1, "张三", 40, "技术部"),
-                                new Employee(2, "李四", 30, "技术部"),
-                                new Employee(3, "王五", 40, "市场部"))));
+            collect(
+                Arrays.asList(
+                    new Employee(1, "张三", 40, "技术部"),
+                    new Employee(2, "李四", 30, "技术部"),
+                    new Employee(3, "王五", 40, "市场部"))));
     }
 
-    static class Employee {
+    public static class Employee {
+
         // 用户的id
         private final Integer id;
         // 用户的姓名
