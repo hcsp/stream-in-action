@@ -1,9 +1,5 @@
 package com.github.hcsp.stream;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.stream.Stream;
-
 public class Problem3 {
     // 使用流的方法，再把之前的题目做一遍吧
     // 统计一个给定的字符串中，大写英文字母（A,B,C,...,Z）出现的次数。
