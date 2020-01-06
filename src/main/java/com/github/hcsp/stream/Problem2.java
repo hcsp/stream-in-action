@@ -3,17 +3,12 @@ package com.github.hcsp.stream;
 import java.util.Arrays;
 import java.util.List;
 
-import static java.util.stream.Collectors.*;
-
 public class Problem2 {
     // 判断一段文本中是否包含关键词列表中的文本，如果包含任意一个关键词，返回true，否则返回false
     // 例如，text="catcatcat,boyboyboy", keywords=["boy", "girl"]，返回true
     // 例如，text="I am a boy", keywords=["cat", "dog"]，返回false
     public static boolean containsKeyword(String text, List<String> keywords) {
-        List<String> result = keywords.stream()
-                .filter(text::contains)
-                .collect(toList());
-        return !result.isEmpty();
+        return false;
     }
 
     public static void main(String[] args) {
