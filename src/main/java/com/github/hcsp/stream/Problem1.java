@@ -43,7 +43,7 @@ public class Problem1 {
     public static LinkedList<String> collectNames(List<User> users) {
         return users.stream()
                 .filter(Problem1::isUserAgeBiggerThanSixty)
-                .sorted(Comparator.comparing(User::getAge))
+                .sorted(Comparator.comparing(User::getAge).reversed())
                 .map(User::getName)
                 .collect(Collectors.toCollection(LinkedList::new));
     }
