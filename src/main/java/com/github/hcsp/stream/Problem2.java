@@ -8,7 +8,7 @@ public class Problem2 {
     // 例如，text="catcatcat,boyboyboy", keywords=["boy", "girl"]，返回true
     // 例如，text="I am a boy", keywords=["cat", "dog"]，返回false
     public static boolean containsKeyword(String text, List<String> keywords) {
-        return false;
+        return keywords.stream().anyMatch(text::contains);
     }
 
     public static void main(String[] args) {
