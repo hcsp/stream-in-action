@@ -40,7 +40,6 @@ public class Problem1 {
                 .filter(user -> user.age >= 60)
                 .sorted(Comparator.comparing(User::getAge).reversed())
                 .map(User::getName).collect(Collectors.toCollection(LinkedList::new));
-
     }
 
     public static void main(String[] args) {
