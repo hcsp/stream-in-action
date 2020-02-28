@@ -9,7 +9,7 @@ public class Problem6 {
     // 例如，传入参数words=['a','bb','ccc','d','e']
     // 返回字符串a,d,e
     public static String filterThenConcat(Set<String> words) {
-        return null;
+        return words.stream().filter(word -> word.length() == 1).reduce((x,y)->x+","+y).get();
     }
 
     public static void main(String[] args) {
