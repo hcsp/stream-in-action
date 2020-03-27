@@ -14,7 +14,7 @@ public class Problem4 {
     //    技术部 -> [{name=李四, department=技术部, age=30 }, {name=张三, department=技术部, age=40 }]
     //    市场部 -> [{name=王五, department=市场部, age=40 }]
     public static Map<String, List<Employee>> collect(List<Employee> employees) {
-        return employees.stream().collect(Collectors.groupingBy(Employee::getDepartment));
+        return employees.stream().sorted(Comparator.comparing(Employee::getAge)).collect(Collectors.groupingBy(Employee::getDepartment));
     }
 
     public static void main(String[] args) {
