@@ -2,7 +2,6 @@ package com.github.hcsp.stream;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Problem4 {
     // 再用流的方法把之前的题目做一遍吧：

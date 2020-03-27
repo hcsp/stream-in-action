@@ -1,9 +1,7 @@
 package com.github.hcsp.stream;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.regex.Pattern;
-import java.util.stream.Stream;
 
 public class Problem3 {
     // 使用流的方法，再把之前的题目做一遍吧
@@ -12,6 +10,7 @@ public class Problem3 {
     public static int countUpperCaseLetters(String str) {
         return (int) Arrays.stream(str.split("")).filter(a -> p.matcher(a).matches()).count();
     }
+
     private static final Pattern p = Pattern.compile("[A-Z]");
 
     public static void main(String[] args) {
