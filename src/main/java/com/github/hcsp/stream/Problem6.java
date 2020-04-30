@@ -3,7 +3,6 @@ package com.github.hcsp.stream;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
-import java.util.StringJoiner;
 import java.util.stream.Collectors;
 
 public class Problem6 {
