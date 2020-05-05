@@ -1,29 +1,30 @@
 package com.github.hcsp.stream;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class Problem4 {
-    /*
-     * 再用流的方法把之前的题目做一遍吧： 请编写一个方法，对传入的List<Employee>进行如下处理：
-     * 返回一个从部门名到这个部门的所有用户的映射。同一个部门的用户按照年龄进行从小到大排序。 例如，传入的employees是[{name=张三,
-     * department=技术部, age=40 }, {name=李四, department=技术部, age=30 }, {name=王五,
-     * department=市场部, age=40 }] 返回如下映射： 技术部 -> [{name=李四, department=技术部, age=30 },
-     * {name=张三, department=技术部, age=40 }] 市场部 -> [{name=王五, department=市场部, age=40
-     * }]
-     */
+    // 再用流的方法把之前的题目做一遍吧：
+    // 请编写一个方法，对传入的List<Employee>进行如下处理：
+    // 返回一个从部门名到这个部门的所有用户的映射。同一个部门的用户按照年龄进行从小到大排序。
+    // 例如，传入的employees是[{name=张三, department=技术部, age=40 }, {name=李四, department=技术部, age=30 },
+    // {name=王五, department=市场部, age=40 }]
+    // 返回如下映射：
+    //    技术部 -> [{name=李四, department=技术部, age=30 }, {name=张三, department=技术部, age=40 }]
+    //    市场部 -> [{name=王五, department=市场部, age=40 }]
     public static Map<String, List<Employee>> collect(List<Employee> employees) {
-        return employees.stream().sorted(Comparator.comparing(Employee::getAge))
-                .collect(Collectors.groupingBy(Employee::getDepartment, Collectors.toList()));
+        return null;
     }
 
     public static void main(String[] args) {
-        System.out.println(collect(Arrays.asList(new Employee(1, "张三", 40, "技术部"), new Employee(2, "李四", 30, "技术部"),
-                new Employee(3, "王五", 40, "市场部"))));
+        System.out.println(
+                collect(
+                        Arrays.asList(
+                                new Employee(1, "张三", 40, "技术部"),
+                                new Employee(2, "李四", 30, "技术部"),
+                                new Employee(3, "王五", 40, "市场部"))));
     }
 
     static class Employee {
@@ -74,11 +75,6 @@ public class Problem4 {
         @Override
         public int hashCode() {
             return Objects.hash(id);
-        }
-
-        @Override
-        public String toString() {
-            return this.getName() + "," + this.getDepartment() + "," + this.age;
         }
     }
 }
