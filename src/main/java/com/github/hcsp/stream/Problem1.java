@@ -35,11 +35,7 @@ public class Problem1 {
 
     // 编写一个方法，筛选出年龄大于等于60的用户，然后将他们按照年龄从大到小排序，将他们的名字放在一个LinkedList中返回
     public static LinkedList<String> collectNames(List<User> users) {
-        return users.stream()
-                .filter(user -> user.getAge() >= 60)
-                .sorted(Comparator.comparing(User::getAge).reversed())
-                .map(User::getName)
-                .collect(Collectors.toCollection((LinkedList::new)));
+        return users.stream().filter(user -> user.getAge() >= 60).sorted(Comparator.comparing(User::getAge).reversed()).map(User::getName).collect(Collectors.toCollection((LinkedList::new)));
     }
 
     public static void main(String[] args) {
