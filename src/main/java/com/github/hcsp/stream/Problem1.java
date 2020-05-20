@@ -32,9 +32,9 @@ public class Problem1 {
 
     // 编写一个方法，统计"年龄大于等于60的用户中，名字是两个字的用户数量"
     public static int countUsers(List<User> users) {
-        return (int)users.stream()
-                .filter(var->var.age>=60)
-                .filter(var->var.name.length()==2)
+        return (int) users.stream()
+                .filter(var -> var.age >= 60)
+                .filter(var -> var.name.length() == 2)
                 .count();
     }
 
