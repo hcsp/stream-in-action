@@ -10,7 +10,7 @@ public class Problem5 {
     // 例如，传入参数[{id=1,name='肥皂'},{id=2,name='牙刷'}]
     // 返回一个映射{1->Order(1,'肥皂'),2->Order(2,'牙刷')}
     public static Map<Integer, Order> toMap(List<Order> orders) {
-        return orders.stream().collect(Collectors.toMap(order -> order.getId(),order ->order));
+        return orders.stream().collect(Collectors.toMap(order -> order.getId(), order ->order));
     }
 
     public static void main(String[] args) {

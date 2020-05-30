@@ -1,13 +1,7 @@
 package com.github.hcsp.stream;
 
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
-import org.w3c.dom.ls.LSOutput;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.stream.Stream;
 
 public class Problem3 {
     // 使用流的方法，再把之前的题目做一遍吧

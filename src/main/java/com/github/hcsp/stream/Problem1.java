@@ -1,5 +1,4 @@
 package com.github.hcsp.stream;
-import	java.lang.annotation.Retention;
 
 import java.util.Arrays;
 import java.util.LinkedList;
