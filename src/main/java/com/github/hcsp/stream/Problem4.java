@@ -1,9 +1,8 @@
 package com.github.hcsp.stream;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Problem4 {
     // 再用流的方法把之前的题目做一遍吧：
@@ -15,7 +14,21 @@ public class Problem4 {
     //    技术部 -> [{name=李四, department=技术部, age=30 }, {name=张三, department=技术部, age=40 }]
     //    市场部 -> [{name=王五, department=市场部, age=40 }]
     public static Map<String, List<Employee>> collect(List<Employee> employees) {
-        return null;
+        Map<String, List<Employee>> collect = employees.stream().collect(Collectors.groupingBy(Employee::getDepartment));
+        Set<String> strings = collect.keySet();
+        for (String string : strings) {
+            collect.put(string,collect.get(string).stream().sorted((t1,t2)->{
+                if(t1.getAge()>t2.getAge()){
+                    return 1;
+                }else if(t1.getAge()<t2.getAge()) {
+                    return -1;
+                }else{
+                    return 0;
+                }
+            }).collect(Collectors.toList()));
+
+        }
+        return collect;
     }
 
     public static void main(String[] args) {
