@@ -1,7 +1,9 @@
 package com.github.hcsp.stream;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 public class Problem4 {
     // 再用流的方法把之前的题目做一遍吧：
@@ -13,13 +15,16 @@ public class Problem4 {
     //    技术部 -> [{name=李四, department=技术部, age=30 }, {name=张三, department=技术部, age=40 }]
     //    市场部 -> [{name=王五, department=市场部, age=40 }]
     public static Map<String, List<Employee>> collect(List<Employee> employees) {
-        return employees.stream().sorted(Comparator.comparing(Employee::getAge))
-                .collect(Collectors.groupingBy(Employee::getDepartment));
+        return null;
     }
 
     public static void main(String[] args) {
-        System.out.println(collect(Arrays.asList(new Employee(1, "张三", 40, "技术部"), new Employee(2, "李四", 30, "技术部"),
-                new Employee(3, "王五", 40, "市场部"))));
+        System.out.println(
+                collect(
+                        Arrays.asList(
+                                new Employee(1, "张三", 40, "技术部"),
+                                new Employee(2, "李四", 30, "技术部"),
+                                new Employee(3, "王五", 40, "市场部"))));
     }
 
     static class Employee {
@@ -55,7 +60,8 @@ public class Problem4 {
             return department;
         }
 
-        @Override public boolean equals(Object o) {
+        @Override
+        public boolean equals(Object o) {
             if (this == o) {
                 return true;
             }
@@ -66,7 +72,8 @@ public class Problem4 {
             return Objects.equals(id, person.id);
         }
 
-        @Override public int hashCode() {
+        @Override
+        public int hashCode() {
             return Objects.hash(id);
         }
     }
