@@ -1,11 +1,9 @@
 package com.github.hcsp.stream;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class Problem4 {
     // 再用流的方法把之前的题目做一遍吧：
@@ -17,8 +15,7 @@ public class Problem4 {
     //    技术部 -> [{name=李四, department=技术部, age=30 }, {name=张三, department=技术部, age=40 }]
     //    市场部 -> [{name=王五, department=市场部, age=40 }]
     public static Map<String, List<Employee>> collect(List<Employee> employees) {
-        return employees.stream().sorted(Comparator.comparing(Employee::getAge).thenComparing(Employee::getId))
-                .collect(Collectors.groupingBy(Employee::getDepartment));
+        return null;
     }
 
     public static void main(String[] args) {
@@ -73,16 +70,6 @@ public class Problem4 {
             }
             Employee person = (Employee) o;
             return Objects.equals(id, person.id);
-        }
-
-        @Override
-        public String toString() {
-            final StringBuffer sb = new StringBuffer();
-            sb.append("{name='").append(name).append('\'');
-            sb.append(", age=").append(age);
-            sb.append(", department='").append(department).append('\'');
-            sb.append('}');
-            return sb.toString();
         }
 
         @Override
