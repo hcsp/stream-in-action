@@ -1,9 +1,7 @@
 package com.github.hcsp.stream;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Problem4 {
     // 再用流的方法把之前的题目做一遍吧：
@@ -15,7 +13,7 @@ public class Problem4 {
     //    技术部 -> [{name=李四, department=技术部, age=30 }, {name=张三, department=技术部, age=40 }]
     //    市场部 -> [{name=王五, department=市场部, age=40 }]
     public static Map<String, List<Employee>> collect(List<Employee> employees) {
-        return null;
+        return employees.stream().sorted(Comparator.naturalOrder()).collect(Collectors.groupingBy(Employee::getDepartment));
     }
 
     public static void main(String[] args) {
@@ -27,7 +25,7 @@ public class Problem4 {
                                 new Employee(3, "王五", 40, "市场部"))));
     }
 
-    static class Employee {
+    static class Employee implements Comparable<Employee> {
         // 用户的id
         private final Integer id;
         // 用户的姓名
@@ -42,6 +40,11 @@ public class Problem4 {
             this.name = name;
             this.age = age;
             this.department = department;
+        }
+
+        @Override
+        public int compareTo(Employee o) {
+            return this.age - o.age;
         }
 
         public Integer getId() {
