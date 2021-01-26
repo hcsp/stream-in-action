@@ -13,7 +13,7 @@ public class ProblemsTest {
     @Test
     public void test1() {
         Assertions.assertEquals(
-                2,
+                3,
                 Problem1.countUsers(
                         Arrays.asList(
                                 new Problem1.User("张三", 60),
