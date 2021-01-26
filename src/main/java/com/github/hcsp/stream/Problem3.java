@@ -1,6 +1,6 @@
 package com.github.hcsp.stream;
 
-import java.util.Arrays;
+
 
 public class Problem3 {
     // 使用流的方法，再把之前的题目做一遍吧
