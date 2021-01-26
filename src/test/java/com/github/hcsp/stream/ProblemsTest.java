@@ -1,19 +1,16 @@
 package com.github.hcsp.stream;
 
-import java.util.Arrays;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class ProblemsTest {
     @Test
     public void test1() {
         Assertions.assertEquals(
-                3,
+                2,
                 Problem1.countUsers(
                         Arrays.asList(
                                 new Problem1.User("张三", 60),
