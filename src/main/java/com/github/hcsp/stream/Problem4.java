@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import static java.util.Comparator.comparing;
+import static java.util.stream.Collectors.groupingBy;
+
 public class Problem4 {
     // 再用流的方法把之前的题目做一遍吧：
     // 请编写一个方法，对传入的List<Employee>进行如下处理：
@@ -15,7 +18,9 @@ public class Problem4 {
     //    技术部 -> [{name=李四, department=技术部, age=30 }, {name=张三, department=技术部, age=40 }]
     //    市场部 -> [{name=王五, department=市场部, age=40 }]
     public static Map<String, List<Employee>> collect(List<Employee> employees) {
-        return null;
+        return employees.stream()
+                .sorted(comparing(Employee::getAge))
+                .collect(groupingBy(Employee::getDepartment));
     }
 
     public static void main(String[] args) {
