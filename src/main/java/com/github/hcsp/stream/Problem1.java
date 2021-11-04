@@ -5,7 +5,6 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Problem1 {
     static class User {
@@ -36,7 +35,7 @@ public class Problem1 {
         return users.stream()
                 .filter(user -> user.getAge() >= 60)
                 .sorted(Comparator.comparing(User::getAge).reversed())
-                .map(user -> user.getName())
+                .map(User::getName)
                 .collect(Collectors.toCollection(LinkedList::new));
     }
 
