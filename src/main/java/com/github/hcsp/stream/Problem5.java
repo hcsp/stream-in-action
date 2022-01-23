@@ -11,7 +11,7 @@ public class Problem5 {
     // 返回一个映射{1->Order(1,'肥皂'),2->Order(2,'牙刷')}
     public static Map<Integer, Order> toMap(List<Order> orders) {
 
-        return orders.stream().collect(Collectors.toMap(Order::getId, Order -> Order));
+        return orders.stream().collect(Collectors.toMap(Order::getId, order -> order));
     }
 
     public static void main(String[] args) {
