@@ -1,6 +1,7 @@
 package com.github.hcsp.stream;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -9,7 +10,13 @@ public class Problem5 {
     // 例如，传入参数[{id=1,name='肥皂'},{id=2,name='牙刷'}]
     // 返回一个映射{1->Order(1,'肥皂'),2->Order(2,'牙刷')}
     public static Map<Integer, Order> toMap(List<Order> orders) {
-        return null;
+        return orders.stream().reduce(new HashMap<>(), (integerOrderHashMap, order) -> {
+            integerOrderHashMap.put(order.getId(), order);
+            return integerOrderHashMap;
+        }, (integerOrderHashMap, integerOrderHashMap2) -> {
+            integerOrderHashMap.putAll(integerOrderHashMap2);
+            return integerOrderHashMap;
+        });
     }
 
     public static void main(String[] args) {
